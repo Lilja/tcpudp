@@ -3,18 +3,19 @@ __author__ = 'William'
 
 import json
 from socket import *
+import sys
 
 # Set server ip and port
-serverName = '192.168.43.28'
-serverPort = 12000
+serverName = sys.argv[1]
+serverPort = int(sys.argv[2])
+# Set request message to send
+messageSizeInBytes = sys.argv[3]
 
 # Create socket
 clientSocket = socket(AF_INET, SOCK_STREAM)
 # Connect to socket
 clientSocket.connect((serverName, serverPort))
 
-# Set request message to send
-messageSizeInBytes = 100
 secondsBetweenTransfers = 0.01
 nrOfTransfers = 10000
 sendInfo = (messageSizeInBytes, secondsBetweenTransfers, nrOfTransfers)

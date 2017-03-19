@@ -3,7 +3,8 @@ import json
 import os
 from socket import *
 import time
-serverPort = 12000
+import sys
+serverPort = int(sys.argv)
 serverSocket = socket(AF_INET, SOCK_STREAM)
 serverSocket.bind(('', serverPort))
 serverSocket.listen(1)

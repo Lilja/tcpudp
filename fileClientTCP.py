@@ -2,18 +2,21 @@
 __author__ = 'William'
 
 from socket import *
+import sys
 
 # Set server ip and port
-serverName = '192.168.43.28'
-serverPort = 12000
+serverName = sys.argv[1]
+serverPort = int(sys.argv[2])
+# Set file to request (choose from: 100, 1000, 10000, 100000, 1000000, 10000000, 100000000)
+fileToRequest = sys.argv[3]
+
+print("Ip: " + serverName + " port " + str(serverPort) + " file: " + fileToRequest)
 
 # Create socket
 clientSocket = socket(AF_INET, SOCK_STREAM)
 # Connect to socket
 clientSocket.connect((serverName, serverPort))
 
-# Set file to request (choose from: 100, 1000, 10000, 100000, 1000000, 10000000, 100000000)
-fileToRequest = "1000000"
 
 # Send file request to server
 clientSocket.send(str.encode(fileToRequest))
