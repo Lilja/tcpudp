@@ -3,9 +3,10 @@ import json
 import os
 from socket import *
 import time
-import sys
-serverPort = int(sys.argv)
+
+serverPort = 12000
 serverSocket = socket(AF_INET, SOCK_STREAM)
+serverSocket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 serverSocket.bind(('', serverPort))
 serverSocket.listen(1)
 while 1:

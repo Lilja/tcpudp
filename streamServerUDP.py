@@ -6,6 +6,7 @@ import os
 import sys
 serverPort = int(sys.argv)
 serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 serverSocket.bind(('', serverPort))
 while 1:
     message, clientAddress = serverSocket.recvfrom(2048)
