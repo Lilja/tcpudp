@@ -6,9 +6,9 @@ import sys
 
 # Set server ip and port
 serverName = sys.argv[1]
-serverPort = int(sys.argv[2])
+serverPort = 12000
 # Set file to request (choose from: 100, 1000, 10000, 100000, 1000000, 10000000, 100000000)
-fileToRequest = sys.argv[3]
+fileToRequest = sys.argv[2]
 
 # Create socket
 clientSocket = socket(AF_INET, SOCK_DGRAM)

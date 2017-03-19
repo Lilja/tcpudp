@@ -7,9 +7,9 @@ import sys
 
 # Set server ip and port
 serverName = sys.argv[1]
-serverPort = int(sys.argv[2])
+serverPort = 12000
 # Set request message to send
-messageSizeInBytes = sys.argv[3]
+messageSizeInBytes = int(sys.argv[2])
 
 # Create socket
 clientSocket = socket(AF_INET, SOCK_STREAM)
